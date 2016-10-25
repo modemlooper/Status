@@ -1,0 +1,31 @@
+.media-body .icon {
+    float: right;
+}
+
+.post-form {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 225px;
+    background-color: #ffffff;
+}
+
+.pane.chat {
+    margin: 0 0 54px 0;
+}
+
+.list-group {
+    padding: 0 0 10px 0;
+}
+
+.chat .list-group * {
+    white-space: normal;
+}
+
+.list-group-item.active {
+    background-color: #746384;
+}
+
+stong {
+    font-weight: 600;
+}
