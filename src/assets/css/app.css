@@ -22,6 +22,14 @@
     white-space: normal;
 }
 
+.sidebar .list-group-item  {
+    padding: 0px;
+}
+
+.sidebar .list-group-item > div {
+    padding: 10px;
+}
+
 .list-group-item.active {
     background-color: #746384;
 }
