@@ -7,7 +7,7 @@ export class MessagesService {
 
   constructor() {
 
-    this.items = [
+    let items = [
       { name: 'E. Palpatine',
         avatar: 'https://avatars.io/twitter/lordpalpatin',
         time: '8 min ago',
@@ -24,6 +24,8 @@ export class MessagesService {
         message: 'Chew-Bach-A<br><img src="https://pbs.twimg.com/media/Cs0kxL9UsAECh68.jpg" width="300px">'
       },
     ];
+
+    this.items = items;
 
   }
 

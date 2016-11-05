@@ -1,23 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ChannelsService } from '../services/channels/channels.service';
+import { MessagesService } from '../services/messages/messages.service';
+import { ContentComponent } from '../content/content.component';
+
 
 @Component({
-  selector: '[app-sidebar]',
+  selector: '[appsidebar]',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css'],
-  providers: [ChannelsService]
+  providers: [ChannelsService, MessagesService]
 })
 export class SidebarComponent implements OnInit {
 
     items:Array<any>;
+    @Output() someCustomEvent = new EventEmitter<any>();
 
     enter( st: HTMLInputElement ) {
         console.log(st.value);
         st.value = null;
     }
 
-    constructor( channelsService: ChannelsService ) {
-      this.items = channelsService.getItems();
+    constructor( channelsService: ChannelsService, messagesService: MessagesService ) {
+        this.items = channelsService.getItems();
     }
 
     selectNav(nav) {
@@ -25,7 +29,10 @@ export class SidebarComponent implements OnInit {
           nav.active = false;
         });
         nav.active = true;
+
+        this.someCustomEvent.emit(nav.id);
     }
+
 
     ngOnInit() {
     }

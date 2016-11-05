@@ -8,13 +8,19 @@ export class ChannelsService {
     constructor() {
 
       this.items = [
-        { title: 'Death Star',
+        {
+          id: 'death-star',
+          title: 'Death Star',
           count: '234',
         },
-        { title: 'Rebel Alliance',
+        {
+          id: 'rebel-alliance',
+          title: 'Rebel Alliance',
           count: '454',
         },
-        { title: 'Cantina',
+        {
+          id: 'cantina',
+          title: 'Cantina',
           count: '89',
         },
       ];
