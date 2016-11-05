@@ -13,7 +13,7 @@ import { ContentComponent } from '../content/content.component';
 export class SidebarComponent implements OnInit {
 
     items:Array<any>;
-    @Output() someCustomEvent = new EventEmitter<any>();
+    @Output() channelChange = new EventEmitter<any>();
 
     enter( st: HTMLInputElement ) {
         console.log(st.value);
@@ -30,7 +30,7 @@ export class SidebarComponent implements OnInit {
         });
         nav.active = true;
 
-        this.someCustomEvent.emit(nav.id);
+        this.channelChange.emit(nav.id);
     }
 
 

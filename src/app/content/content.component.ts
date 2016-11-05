@@ -13,23 +13,35 @@ export class ContentComponent implements OnInit {
 
     items: Array<any>;
 
-    @Input() com1ref;
-
     addMessage( st: HTMLInputElement ) {
         console.log(st.value);
+        this.updateItems( st.value );
         st.value = null;
     }
 
   constructor( messagesService: MessagesService, private dataService: DataService ) {
-      this.items = messagesService.getItems();
+      this.items = [];
   }
 
-  updateItems() {
+  updateItems( text ) {
       this.items.push(
           { name: 'E. Palpatine',
             avatar: 'https://avatars.io/twitter/lordpalpatin',
             time: '8 min ago',
-            message: 'It\'s not the lava, loss of limbs or electrocution that kills you, it\'s your douchebag son who removes your breathing apparatus.'
+            message: text,
+          }
+      );
+  }
+
+ channelChange( text ) {
+
+     this.items = [];
+
+      this.items.push(
+          { name: 'E. Palpatine',
+            avatar: 'https://avatars.io/twitter/lordpalpatin',
+            time: '8 min ago',
+            message: text,
           }
       );
   }

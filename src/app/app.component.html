@@ -4,8 +4,8 @@
   <div class="window-content">
     <div class="pane-group">
 
-        <div appsidebar class="pane pane-sm sidebar" (someCustomEvent)="appmain.updateItems($event)"></div>
-        <div appcontent #appmain class="pane chat"></div>
+        <div appsidebar class="pane pane-sm sidebar" (channelChange)="appcontent.channelChange($event)"></div>
+        <div appcontent #appcontent class="pane chat"></div>
 
     </div>
   </div>
